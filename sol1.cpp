@@ -29,6 +29,12 @@ public:
 		ptr = new T[size];
 
 	}
+	void assign(T data){
+		ptr = new T(data);
+	}
+	T get_data(){
+		return *ptr;
+	}
 
 };
 
@@ -45,7 +51,11 @@ int main()
 		cout << ptr.get_ptr()[i];
 	}
 	cout<<""<<endl;
-	//delete ptr;//if it was a ptr* i had to manually delete it
+
+	string *s;
+	Smart_pointer<string> ptr_str = Smart_pointer<string>(s);
+	ptr_str.assign("Horn");
+	cout << ptr_str.get_data() << endl;
 
 
 
